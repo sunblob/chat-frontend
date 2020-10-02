@@ -1,17 +1,17 @@
 <template>
-  <div class="content">
-      <slot></slot>
+  <div class="content-main">
+    <slot></slot>
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style lang="scss" scoped>
-.content {
-    padding: 20px;
+.content-main {
+  height: 100%;
+  padding: 20px;
+  width: 100%;
 }
 </style>>
