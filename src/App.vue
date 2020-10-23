@@ -1,19 +1,15 @@
 <template>
   <div id="app">
-    <app-bar />
-    <main-content>
-      <router-view />
-    </main-content>
+    <!-- <app-bar /> -->
+    <router-view />
   </div>
 </template>
 
 <script>
-import MainContent from "@/components/MainContent.vue";
 import AppBar from "@/components/AppBar.vue";
 
 export default {
   components: {
-    "main-content": MainContent,
     "app-bar": AppBar,
   },
 };

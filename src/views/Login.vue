@@ -72,6 +72,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: #321fbd url(./../assets/bg.jpg) no-repeat 0 0 / cover;
 
   .login {
     display: flex;
@@ -83,7 +84,7 @@ export default {
 
     padding: 1.5rem;
 
-    box-shadow: 1px 2px 2px 1px #ccc;
+    // box-shadow: 1px 2px 2px 1px #ccc;
 
     .login-body {
       flex: 1 1 auto;
@@ -107,7 +108,7 @@ export default {
       border: 1px solid;
       color: #5c6873;
       background-color: #fff;
-      border-color: #a0a5aa;
+      border-color: #53a9ff;
       outline: none;
 
       &:focus {
@@ -143,7 +144,7 @@ export default {
   .form-select /deep/ .vs__dropdown-toggle,
   .form-select /deep/ .vs__dropdown-menu {
     border-radius: 0.25rem;
-    border-color: #a0a5aa;
+    border-color: #53a9ff;
     font-size: 0.85rem;
     line-height: 1.5;
     padding: 0.3rem 0.1rem;
