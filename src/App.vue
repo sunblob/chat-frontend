@@ -1,18 +1,11 @@
 <template>
   <div id="app">
-    <!-- <app-bar /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import AppBar from "@/components/AppBar.vue";
-
-export default {
-  components: {
-    "app-bar": AppBar,
-  },
-};
+export default {};
 </script>
 
 <style lang="scss">
@@ -24,13 +17,14 @@ export default {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background-color: #ebedef;
+  background-color: var(--color-primary);
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -53,6 +47,12 @@ textarea {
   border: none;
 }
 
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
 button:focus {
   all: unset;
 }
@@ -71,5 +71,7 @@ h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
   line-height: 1.2;
+  margin: 0;
+  padding: 0;
 }
 </style>

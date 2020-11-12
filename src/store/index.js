@@ -14,13 +14,17 @@ export default new Vuex.Store({
 		},
 	},
 	actions: {
-		async getAllChats({ commit }) {
-			const chats = await ky.get('http://localhost:3005/api/chats').json().catch(e => console.log(e));
-			console.log('Chats: ', chats);
-			commit('setChats', chats);
+		async getAllChats({ commit, state }) {
+			if (state.chats.length > 0) {
+				return;
+			} else {
+				const chats = await ky.get('http://localhost:3005/api/chats').json().catch((e) => console.log(e));
+				console.log('Chats: ', chats);
+				commit('setChats', chats);
+			}
 		},
 	},
 	getters: {
-		getChats: state => state.chats,
+		getChats: (state) => state.chats,
 	},
 });

@@ -1,9 +1,9 @@
 <template>
   <div class="content">
-    <div class="login">
-      <div class="login-body">
+    <div class="login-card">
+      <div class="login-card__body">
         <form action="#">
-          <h2>Simple Chat App</h2>
+          <h2 class="login-card__title">Simple Chat App</h2>
           <p>Выберите чат и войдите</p>
           <div role="group" class="form-group">
             <input
@@ -31,8 +31,9 @@
               class="form-select"
             ></v-select>
           </div>
-          <div class="form-btn">
-            <button type="button" @click="enterChatroom">Войти</button>
+          <div class="form-btn-wrapper">
+            <!-- <button type="button" @click="enterChatroom">Войти</button> -->
+            <CustomButton :click="enterChatroom">Войти</CustomButton>
           </div>
         </form>
       </div>
@@ -43,8 +44,14 @@
 <script>
 import { mapGetters } from "vuex";
 
+import CustomButton from "@/components/CustomButton.vue";
+
 export default {
   name: "Login",
+  title: "Login Page",
+  components: {
+    CustomButton,
+  },
   data: () => ({
     name: "",
     password: "",
@@ -68,13 +75,13 @@ export default {
 
 <style lang="scss" scoped>
 .content {
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #321fbd url(./../assets/bg.jpg) no-repeat 0 0 / cover;
+  background: var(--color-primary);
 
-  .login {
+  .login-card {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -86,10 +93,14 @@ export default {
 
     // box-shadow: 1px 2px 2px 1px #ccc;
 
-    .login-body {
+    .login-card__body {
       flex: 1 1 auto;
 
       padding: 1.25rem;
+    }
+
+    .login-card__title {
+      color: var(--color-primary);
     }
   }
 
@@ -108,43 +119,27 @@ export default {
       border: 1px solid;
       color: #5c6873;
       background-color: #fff;
-      border-color: #53a9ff;
+      border-color: var(--color-primary);
       outline: none;
 
       &:focus {
         display: inline-block;
-        box-shadow: 0 0 0 2px #88b8ff;
+        box-shadow: 0 0 0 2px var(--color-primary);
         border-radius: 2px;
       }
     }
   }
 
-  .form-btn {
+  .form-btn-wrapper {
     display: flex;
     justify-content: flex-end;
-
-    button {
-      display: inline-block;
-      font-weight: 400;
-      color: #fff;
-      background-color: #321fbd;
-      text-align: center;
-      vertical-align: middle;
-      cursor: pointer;
-      padding: 0.375rem 0.75rem;
-      font-size: 0.85rem;
-      border-radius: 0.25rem;
-      line-height: 1.5;
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-    }
   }
 
   .form-select /deep/ .vs__search::placeholder,
   .form-select /deep/ .vs__dropdown-toggle,
   .form-select /deep/ .vs__dropdown-menu {
     border-radius: 0.25rem;
-    border-color: #53a9ff;
+    border-color: var(--color-primary);
     font-size: 0.85rem;
     line-height: 1.5;
     padding: 0.3rem 0.1rem;
